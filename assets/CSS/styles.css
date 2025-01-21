@@ -105,27 +105,7 @@ p {
 }
 
 /* Header */
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: auto 20px;
-    background: transparent;
-    color: #010101;
-}
 
-.navigation {
-    width: var(--container-width);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.nav {
-    display: flex;
-    gap: 15px;
-}
 
 /* CTA Button */
 .btn-shine {
