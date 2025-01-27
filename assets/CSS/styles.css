@@ -11,13 +11,9 @@
   --body-ff: 'Roboto', sans-serif;
 
   /* Colors */
-  --sage-100: #FDFCF8;
-  --sage-200: #BFCFBB;
-  --sage-300: #BFCFBB;
-  --sage-400: #8EA58C;
-  --sage-500: #738A6E;
-  --sage-600: #344C3D;
-
+  --light: #fafefb;
+  --dark: #1c2838;
+  --blue: #0a7fad;
 }
 
 /* CSS Reset */
@@ -47,7 +43,7 @@ body {
   font-family: var(--body-ff);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--sage-100);
+  background-color: var(--light);
 }
 
 img,
@@ -116,7 +112,7 @@ h6 {
   font-size: 2.5rem;
   font-weight: 800;
   font-family: var(--heading-ff);
-  color: var(--sage-600);
+  color: var(--dark);
   text-align: center;
 }
 
@@ -127,7 +123,7 @@ h6 {
   left: 0;
   height: 2px;
   width: 3rem;
-  background-color: var(--sage-400);
+  background-color: var(--blue);
 }
 
 h1 {
@@ -136,6 +132,94 @@ h1 {
 
 p {
     font-family: var(--body-ff);
+}
+
+/* Button */
+/* From Uiverse.io by adamgiebl */ 
+button {
+  position: relative;
+  font-family: inherit;
+  font-size: 16px;
+  border-radius: 25em;
+  width: 8em;
+  height: 3em;
+  z-index: 1;
+  color: white;
+  overflow: hidden;
+  border: none;
+}
+
+button .text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 3em;
+  border-radius: 40em;
+  border: none;
+  background: linear-gradient(rgba(255, 255, 255, 0.473), rgba(150, 150, 150, 0.25));
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+button .blob {
+  position: absolute;
+  z-index: -1;
+  border-radius: 5em;
+  width: 5em;
+  height: 3em;
+  transition: transform .3s ease-in-out, background .3s ease-in-out;
+}
+
+button .blob:nth-child(2) {
+  left: 0em;
+  top: 0;
+  background: #ff5656;
+}
+
+button .blob:nth-child(3) {
+  left: 1.8em;
+  top: 0;
+  z-index: -1;
+  background: #f9ca24;
+}
+
+button .blob:nth-child(4) {
+  left: 4em;
+  top: -1em;
+  background: #ff9f1a;
+}
+
+button .blob:nth-child(5) {
+  left: 4.3em;
+  top: 1.6em;
+  background: #00a8ff;
+}
+
+button:hover .blob:nth-child(2) {
+  background: #00a8ff;
+}
+
+button:hover .blob:nth-child(3) {
+  background: #ff9f1a;
+}
+
+button:hover .blob:nth-child(4) {
+  background: #f9ca24;
+}
+
+button:hover .blob:nth-child(5) {
+  background: #ff5656;
+}
+
+button:hover .blob {
+  transform: scale(1.3);
+}
+
+button:active {
+  border: 2px solid white;
 }
 
 /* Header */
@@ -152,7 +236,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--sage-600);
+  background-color: var(--light);
 }
 
 .logo img{
@@ -161,7 +245,7 @@ nav {
 
 .nav_menu_btn {
   font-size: 1.5rem;
-  color: var(--sage-100);
+  color: var(--dark);
   cursor: pointer;
 }
 
@@ -176,7 +260,7 @@ nav {
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  background-color: var(--sage-600);
+  background-color: var(--light);
   transition: transform 0.5s;
   z-index: -1;
 }
@@ -187,11 +271,52 @@ nav {
 
 .nav_links a {
   font-weight: 500;
-  color: var(--sage-100);
+  color: var(--dark);
+}
+
+.nav_links a:hover {
+  color: var(--blue);
 }
 
 
-/*  */
+/* Responsive Sizes */
+@media (width > 768px) {
+  nav {
+    position: absolute;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .nav_header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .nav_menu_btn {
+    display: none;
+  }
+
+  .nav_links {
+  position: static;
+  padding: 0;
+  width: fit-content;
+  flex-direction: row;
+  background-color: transparent;
+  transform: none !important;
+  }
+
+  .nav_links a:hover{
+    color: var(--blue);
+  }
+}
 /*  */
 /*  */
 /*  */
