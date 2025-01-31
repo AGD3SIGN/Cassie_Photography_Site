@@ -1,18 +1,56 @@
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+const menuButton = document.querySelector(".menu-button");
+const menuClose = document.querySelector(".menu-close");
+const navContainer = document.querySelector(".nav-container");
+const overlay = document.querySelector(".overlay");
 
-menuBtn.addEventListener("click", (e) => {
-    navLinks.classList.toggle("open");
+function openMenu() {
+  navContainer.classList.add("active");
+  overlay.classList.add("active");
+  menuButton.setAttribute("aria-expanded", "true");
+  menuButton.style.display = "none"; // Hide menu button
+  document.body.style.overflow = "hidden";
+}
 
-    const isOpen = navLinks.classList.contains("open");
-    menuBtnIcon.setAttribute(
-        "class",
-        isOpen ? "ri-close-line" : "ri-menu-3-line"
-    );
+function closeMenu() {
+  navContainer.classList.remove("active");
+  overlay.classList.remove("active");
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.style.display = "block"; // Show menu button
+  document.body.style.overflow = "";
+}
+
+menuButton.addEventListener("click", openMenu);
+menuClose.addEventListener("click", closeMenu);
+overlay.addEventListener("click", closeMenu);
+
+// Close menu on ESC key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeMenu();
+  }
 });
 
-navLinks.addEventListener("click", (e) => {
-    navLinks.classList.remove("open");
-    menuBtnIcon.setAttribute("class", "ri-menu-3-line");
-});
+// Handle focus trap within menu
+const focusableElements = navContainer.querySelectorAll(
+  'a[href], button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+);
+const firstFocusable = focusableElements[0];
+const lastFocusable = focusableElements[focusableElements.length - 1];
+
+function handleTabKey(e) {
+  if (e.key === "Tab") {
+    if (e.shiftKey) {
+      if (document.activeElement === firstFocusable) {
+        lastFocusable.focus();
+        e.preventDefault();
+      }
+    } else {
+      if (document.activeElement === lastFocusable) {
+        firstFocusable.focus();
+        e.preventDefault();
+      }
+    }
+  }
+}
+
+navContainer.addEventListener("keydown", handleTabKey);

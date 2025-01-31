@@ -14,53 +14,146 @@
     />
   </head>
 
-  <!-- BODY -->
+   <!--==================== BODY ====================-->
   <body>
-    
-    <!-- NAVIGATION -->
-     <nav>
-      <div class="nav_header">
-        <div class="logo">
-          <a href="#">
-            <img src="assets/images/logoipsum-343.svg" alt=""> 
-          </a>
-        </div>
+     <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <!-- Nav Container -->
+      <nav class="nav container">
+        <!-- Logo -->
+        <img src="assets/images/logo2.svg" alt="">
 
-        <div class="nav_menu_btn" id="menu-btn">
-          <i class="ri-menu-4-fill"></i>
-        </div>
-      </div>
+        <!-- Nav Menu -->
+        <div class="nav_menu" id="nav-menu">
+          <!-- Nav List -->
+          <ul class="nav_list">
+            <!-- Nav Item 1 -->
+            <li class="nav_item">
+              <a href="#home" class="nav_link">
+                <i class="ri-polaroid-line"></i>
+                <span>Home</span>
+              </a>
+            </li>
 
-      <ul class="nav_links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#Contact">Contact</a></li>
-      </ul>
-     </nav>
+            <!-- Nav Item 2 -->
+            <li class="nav_item">
+              <a href="#about" class="nav_link">
+                <i class="ri-polaroid-line"></i>
+                <span>About</span>
+              </a>
+            </li>
 
-     <header id="home">
-      <div class="section_container header_container">
-        <div class="header_image">
-          <img src="" alt="">
-        </div>
-        <div class="header_content">
-          <h1>Lorem ipsum dolor sit amet.</h1>
-          <h2>Lorem, ipsum dolor.</h2>
-          <div class="header_btn">
-            <!-- Button -->
-            <button>
-              <span class="text">Book Session</span>
-              <span class="blob"></span>
-              <span class="blob"></span>
-              <span class="blob"></span>
-              <span class="blob"></span>
-            </button>
+            <!-- Nav Item 3 -->
+            <li class="nav_item">
+              <a href="#portfolio" class="nav_link">
+                <i class="ri-polaroid-line"></i>
+                <span>Portfolio</span>
+              </a>
+            </li>
+
+            <!-- Nav Item 4 -->
+            <li class="nav_item">
+              <a href="#contact" class="nav_link">
+                <i class="ri-polaroid-line"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Close Button -->
+          <div class="nav_close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+
+          <!-- Nav Social -->
+          <div class="nav_social">
+            <!-- Social Icon 1 -->
+            <a href="https://www.instagram.com/" target="_blank" class="nav_social-link">
+              <i class="ri-instagram-line"></i>
+            </a>
+
+            <!-- Social Icon 2 -->
+            <a
+              href="https://www.twitter.com/" target="_blank" class="nav_social-link">
+              <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <!-- Social Icon 3 -->
+            <a href="#" target="_blank" class="nav_social-link">
+              <i class="ri-tiktok-line"></i>
+            </a>
           </div>
         </div>
-      </div>
-     </header>
-    
-     <script src="assets/JS/main.js"></script>
+
+        <!-- Toggle Button -->
+         <div class="nav_toggle" id="nav-toggle">
+          <i class="ri-menu-4-line"></i>
+         </div>
+      </nav>
+    </header>
+
+     <!--==================== MAIN ====================-->
+    <main>
+
+       <!--==================== HERO SECTION ====================-->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title" class="hero-title">
+            Where creative process happens
+          </h1>
+          <p class="hero-text">
+            Your creativity, our inspiration. Whatever your story, set it free.
+          </p>
+          <a href="#contact" class="cta-button">
+            Get in Touch
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+        <div class="hero-images">
+          <img src="https://placehold.co/600x400/000000/FFFFFF/png" alt="Professional DSLR camera" class="image"/>
+          <div class="hero-image-small">
+            <img
+              src="https://placehold.co/600x400/000000/FFFFFF/png"
+              alt="Camera with bokeh effect"
+              class="image"
+            />
+            <img
+              src="https://placehold.co/600x400/000000/FFFFFF/png"
+              alt="Photographer taking pictures"
+              class="image"
+            />
+          </div>
+        </div>
+      </section>
+
+       <!--==================== ABOUT SECTION ====================-->
+      <section class="about" aria-labelledby="about-title">
+        <div class="about-images">
+          <img
+            src="https://placehold.co/600x400/000000/FFFFFF/png"
+            alt="Green plant detail"
+            class="image"
+          />
+          <img
+            src="https://placehold.co/600x400/000000/FFFFFF/png"
+            alt="Growing plant"
+            class="image"
+          />
+        </div>
+        <div class="about-content">
+          <h2 id="about-title" class="about-title">Why we make it happens</h2>
+          <p>
+            Your ceremony & reception venues, your vision, your dress, your
+            colours and anything else you would like.
+          </p>
+          <a href="#contact" class="cta-button">
+            Get in Touch
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script src="assets/JS/main.js"></script>
   </body>
 </html>
