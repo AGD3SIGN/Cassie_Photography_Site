@@ -1,10 +1,105 @@
-/* Google Fonts */
+/* ======================================== Google Fonts ======================================== */
 @import url("https://fonts.googleapis.com/css2?family=Handlee&family=Just+Me+Again+Down+Here&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap");
 
-/* Root variables */
-:root {
-  --header-height: 3.5rem;
+/* ======================================== CSS Reset ======================================== */
+/* Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+/* Remove default margin/padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Add scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add appropriate line eight and text rendering | Set font family */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--body-ff);
+  background-color: var(--white);
+}
+
+/* Remove text decorations and styles */
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* Create a root stacking context */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Add reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ======================================== Root Variables ======================================== */
+:root {
   /* Typography */
   --heading-ff: "Shadows Into Light", sans-serif;
   --body-ff: "Raleway", sans-serif;
@@ -25,88 +120,32 @@
   --z-fixed: 100;
 }
 
-/* CSS Reset */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--body-ff);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  background-color: var(--white);
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/*=============== REUSABLE CSS CLASSES ===============*/
+/* ======================================== Reusable CSS Classes ======================================== */
 .container {
-  max-width: 1725px;
-  margin-inline: auto;
+  max-width: 1575px;
+  margin-inline: 1.5rem;
 }
 
-/*=============== HEADER & NAV ===============*/
-.header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background-color: var(--white);
-  z-index: var(--z-fixed);
-}
-
+/* ======================================== Navigation ======================================== */
 .nav {
+  padding: 1rem;
   position: relative;
-  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.nav_item {
+  font-family: var(--heading-ff);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .nav_logo {
-  color: var(--white);
-  font-weight: var(--font-medium);
+  color: var(--dark-grey);
+  font-family: var(--heading-ff);
+  font-size: 2rem;
+  font-weight: 600;
 }
 
 .nav_close, 
@@ -134,6 +173,9 @@ select {
   }
 
   .nav_item {
+    font-family: var(--heading-ff);
+    font-size: 2rem;
+    font-weight: 600;
     transform: translateX(-150px);
     visibility: hidden;
     transition: transform .4s ease-out, visibility .4s;
@@ -176,7 +218,12 @@ select {
   transition: opacity .4s;
 }
 
+.nav_link:hover {
+  color: var(--primary-purple);
+}
+
 .nav_link i {
+  color: var(--primary-purple);
   font-size: 2rem;
   position: absolute;
   opacity: 0;
@@ -237,6 +284,7 @@ select {
 
 .nav_social-link:hover {
   transform: translateY(-.25rem);
+  color: var(--primary-purple);
 }
 
 /* Show menu */
@@ -255,12 +303,10 @@ select {
 @media screen and (min-width: 1150px) {
   .container {
     margin-inline: auto;
-;
   }
 
   .nav {
     height: calc(var(--header-height) + 2rem);
-    margin: 0 auto;
   }
 
   .nav_toggle, 
@@ -269,7 +315,7 @@ select {
   }
 
   .nav_link {
-    font-size: 1rem;
+    font-size: var(--normal-font-size);
   }
 
   .nav_link i {
@@ -285,111 +331,5 @@ select {
     display: flex;
     align-items: center;
     column-gap: 3.5rem;
-  }
-}
-
-/* Hero Section */
-.hero {
-  padding: var(--spacing-lg);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--spacing-md);
-}
-
-.hero-title {
-  font-family: var(--heading-ff);
-  font-size: 3.5rem;
-  color: var(--primary-purple);
-  line-height: 1.2;
-}
-
-.hero-text {
-  color: #666;
-  margin-bottom: var(--spacing-md);
-}
-
-.hero-images {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 2fr 1fr;
-  gap: var(--spacing-md);
-}
-
-.hero-image-small {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-md);
-}
-
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-}
-
-.cta-button {
-  background-color: var(--secondary-purple);
-  color: var(--white);
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: fit-content;
-  transition: transform var(--transition-speed) ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-}
-
-/* About Section */
-.about {
-  padding: var(--spacing-lg);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-lg);
-  align-items: center;
-}
-
-.about-images {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-md);
-}
-
-.about-content {
-  padding: var(--spacing-lg);
-}
-
-.about-title {
-  font-family: var(--heading-ff);
-  color: var(--primary-purple);
-  font-size: 2rem;
-  margin-bottom: var(--spacing-md);
-}
-
-@media (max-width: 768px) {
-  .hero,
-  .about {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .about-content {
-    padding: 0;
   }
 }
