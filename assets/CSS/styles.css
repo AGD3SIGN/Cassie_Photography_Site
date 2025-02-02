@@ -88,6 +88,7 @@ h6 {
 
 /* Add reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -126,6 +127,100 @@ h6 {
   margin-inline: 1.5rem;
 }
 
+section {
+  height: 100vh;
+}
+
+/* CTA Button */
+/* From Uiverse.io by cssbuttons-io */
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.cta-button {
+  width: 12rem;
+  height: auto;
+}
+
+button.cta-button .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: var(--primary-purple);
+  border-radius: 1.625rem;
+}
+
+button.cta-button .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: var(--white);
+}
+
+button.cta-button .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.cta-button .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid var(--white);
+  border-right: 0.125rem solid var(--white);
+  transform: rotate(45deg);
+}
+
+button.cta-button .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: var(--primary-purple);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: var(--white);
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: var(--white);
+}
+
 /* ======================================== Navigation ======================================== */
 .nav {
   padding: 1rem;
@@ -148,7 +243,7 @@ h6 {
   font-weight: 600;
 }
 
-.nav_close, 
+.nav_close,
 .nav_toggle {
   display: flex;
   color: var(--dark-grey);
@@ -170,6 +265,7 @@ h6 {
     flex-direction: column;
     justify-content: space-between;
     transition: left .4s;
+    z-index: var(--z-tooltip);
   }
 
   .nav_item {
@@ -184,21 +280,25 @@ h6 {
   .nav_item:nth-child(1) {
     transition-delay: .1s;
   }
+
   .nav_item:nth-child(2) {
     transition-delay: .2s;
   }
+
   .nav_item:nth-child(3) {
     transition-delay: .3s;
   }
+
   .nav_item:nth-child(4) {
     transition-delay: .4s;
   }
+
   .nav_item:nth-child(5) {
     transition-delay: .5s;
   }
 }
 
-.nav_list, 
+.nav_list,
 .nav_social {
   display: flex;
 }
@@ -309,7 +409,7 @@ h6 {
     height: calc(var(--header-height) + 2rem);
   }
 
-  .nav_toggle, 
+  .nav_toggle,
   .nav_close {
     display: none;
   }
@@ -388,23 +488,7 @@ h6 {
   border-radius: 0.5rem;
 }
 
-.cta-button {
-  background-color: var(--secondary-purple);
-  color: var(--white);
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: fit-content;
-  transition: transform var(--transition-speed) ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-}
-
+/* ======================================== About Section ======================================== */
 .about {
   padding: var(--spacing-lg);
   display: grid;
@@ -420,11 +504,23 @@ h6 {
 }
 
 .about-content {
-  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-md);
 }
 
 .about-title {
-  color: var(--primary-purple);
-  font-size: 2rem;
+  color: var(--dark-grey);
+  font-size: 2.5rem;
+  text-transform: uppercase;
   margin-bottom: var(--spacing-md);
 }
+
+.about-title span {
+  color: var(--primary-purple);
+  font-family: var(--heading-ff);
+  font-weight: 600;
+}
+
+/* ======================================== Portfolio Section ======================================== */
