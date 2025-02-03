@@ -2,149 +2,145 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Personal Photography Portfolio" />
-  <meta name="keywords" content="HTML, CSS, JavaScript" />
-  <title>Photography | Portfolio</title>
-  <!-- Styles CSS -->
-  <link rel="stylesheet" href="assets/CSS/styles.css" />
-  <!-- Remixicons -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography | Portfolio</title>
+    <!-- Styles CSS -->
+    <link rel="stylesheet" href="assets/CSS/styles.css" />
+    <!-- Remixicons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
-<!-- Body -->
-
 <body>
-  <!-- Navigation Start -->
-  <nav class="nav container">
-    <a href="#" class="nav_logo">Logo</a>
+    <!-- Navigation Start -->
+    <nav class="nav container">
+        <a href="#" class="nav_logo">Logo</a>
 
-    <div class="nav_menu" id="nav-menu">
-      <ul class="nav_list">
-        <li class="nav_item">
-          <a href="#" class="nav_link">
-            <i class="ri-home-line"></i>
-            <span>Home</span>
-          </a>
-        </li>
+        <div class="nav_menu" id="nav-menu">
+            <ul class="nav_list">
+                <li class="nav_item">
+                    <a href="#home" class="nav_link">
+                        <i class="ri-home-line"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
 
-        <li class="nav_item">
-          <a href="#" class="nav_link">
-            <i class="ri-user-line"></i>
-            <span>About</span>
-          </a>
-        </li>
+                <li class="nav_item">
+                    <a href="#about" class="nav_link">
+                        <i class="ri-user-line"></i>
+                        <span>About</span>
+                    </a>
+                </li>
 
-        <li class="nav_item">
-          <a href="#" class="nav_link">
-            <i class="ri-polaroid-line"></i>
-            <span>Portfolio</span>
-          </a>
-        </li>
+                <li class="nav_item">
+                    <a href="#portfolio" class="nav_link">
+                        <i class="ri-polaroid-line"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
 
-        <li class="nav_item">
-          <a href="#" class="nav_link">
-            <i class="ri-mail-send-line"></i>
-            <span>Contact</span>
-          </a>
-        </li>
-      </ul>
+                <li class="nav_item">
+                    <a href="#contact" class="nav_link">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
 
-      <!-- Close button -->
-      <div class="nav_close" id="nav-close">
-        <i class="ri-close-large-line"></i>
-      </div>
+            <!-- Close button -->
+            <div class="nav_close" id="nav-close">
+                <i class="ri-close-large-line"></i>
+            </div>
 
-      <div class="nav_social">
-        <a href="https://www.instagram.com/" target="_blank" class="nav_social-link">
-          <i class="ri-instagram-line"></i>
-        </a>
+            <div class="nav_social">
+                <a href="https://www.instagram.com/" target="_blank" class="nav_social-link">
+                    <i class="ri-instagram-line"></i>
+                </a>
 
-        <a href="https://github.com/" target="_blank" class="nav_social-link">
-          <i class="ri-github-line"></i>
-        </a>
+                <a href="https://github.com/" target="_blank" class="nav_social-link">
+                    <i class="ri-github-line"></i>
+                </a>
 
-        <a href="https://www.linkedin.com/" target="_blank" class="nav_social-link">
-          <i class="ri-linkedin-box-line"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Toggle button -->
-    <div class="nav_toggle" id="nav-toggle">
-      <i class="ri-menu-line"></i>
-    </div>
-  </nav>
-
-  <!-- Main -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero container" aria-labelledby="hero-title">
-      <div class="hero-content">
-        <h1 id="hero-title" class="hero-title">Where the <span>creative</span> process happens</h1>
-        <p class="hero-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, provident.</p>
-        <button class="cta-button">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text">About Me!</span>
-        </button>
-      </div>
-      <div class="hero-images">
-        <img src="assets/images/vintage-camera.jpg" alt="Vinatge Camera with trees covered in snow on the display"
-          class="image">
-        <div class="hero-image-small">
-          <img src="assets/images/car.jpg" alt="Pineapple in black and white" class="image">
-          <img src="assets/images/cat.jpg" alt="Photographer taking pictures" class="image">
+                <a href="https://www.linkedin.com/" target="_blank" class="nav_social-link">
+                    <i class="ri-linkedin-box-line"></i>
+                </a>
+            </div>
         </div>
-      </div>
+
+        <!-- Toggle button -->
+        <div class="nav_toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero container" id="home" aria-labelledby="hero-title">
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="h1-title">
+                Where the <span>creative</span> process happens
+            </h1>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+                provident.
+            </p>
+
+            <!-- Hero Button -->
+            <button class="cta-button">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">About Me!</span>
+            </button>
+        </div>
+
+        <!-- Hero Images -->
+        <div class="hero-images">
+            <img src="assets/images/vintage-camera.jpg" alt="Vintage Camera with trees covered in snow on the display"
+                class="image" />
+            <div class="hero-image-small">
+                <img src="assets/images/car.jpg" alt="Pineapple in black and white" class="image" />
+                <img src="assets/images/cat.jpg" alt="Photographer taking pictures" class="image" />
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
-    <section class="about container" aria-labelledby="about-title">
-      <div class="about-images">
-        <img src="assets/images/purple_flower.jpg" alt="Purple abstract" class="image image-top">
-        <img src="assets/images/pineapple.jpg" alt="Pineapple" class="image image-bottom">
-      </div>
+    <section class="about container" id="about" aria-labelledby="about-title">
+        <!-- About Image -->
+        <div class="about-image">
+            <img src="assets/images/purple_flower.jpg" alt="">
+            <img src="assets/images/pineapple.jpg" alt="">
+        </div>
+        <!-- About Content -->
+        <div class="about-content">
+            <h2 class="h2-title section-header">About <span>Me</span></h2>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti vel laudantium dolores aspernatur ea.</p>
+            <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum sit, illo dolor error alias consectetur!</p>
 
-      <div class="about-content">
-        <h2 id="about-title" class="about-title">About <span>Me</span></h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, reprehenderit.</p>
-        <button class="cta-button">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-          <span class="button-text">Book Session</span>
-        </button>
-      </div>
+            <!-- About Button -->
+            <button class="cta-button">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Book Now!</span>
+            </button>
+        </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio container" aria-labelledby="portfolio-title">
-      <h2 id="portfolio-title" class="section_header">My <span>Work</span></h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, aliquam!</p>
-      <div class="portfolio_grid">
-        <div>
-          <img src="assets/images/car.jpg" alt="portfolio" />
-          <img src="assets/images/cat.jpg" alt="portfolio" />
-          <img src="assets/images/pineapple.jpg" alt="portfolio" />
+    <section class="portfolio container" id="portfolio" aria-labelledby="portfolio-title">
+        <div class="portfolio">
+            <div class="portfolio-content">
+                <h2 class="h2-title section-header">My <span>Work</span></h2>
+            </div>
         </div>
-        <div>
-          <img src="assets/images/purple_flower.jpg" alt="portfolio" />
-          <img src="assets/images/vintage-camera.jpg" alt="portfolio" />
-        </div>
-        <div>
-          <img src="assets/images/car.jpg" alt="portfolio" />
-          <img src="assets/images/cat.jpg" alt="portfolio" />
-        </div>
-      </div>
     </section>
-  </main>
 
+    <!-- Contact Section -->
+    <section class="contact container" id="contact" aria-labelledby="contact-title"></section>
 
-  <!-- Javascript -->
-  <script src="assets/JS/main.js"></script>
+    <script src="assets/JS/main.js"></script>
 </body>
 
 </html>
