@@ -98,10 +98,10 @@
             <!-- Hero Images -->
             <div class="hero-images">
                 <img src="assets/images/vintage-camera.jpg"
-                    alt="Vintage Camera with trees covered in snow on the display" class="image" />
+                    alt="Vintage Camera with trees covered in snow on the display" class="hero-image" />
                 <div class="hero-image-small">
-                    <img src="assets/images/car.jpg" alt="Pineapple in black and white" class="image" />
-                    <img src="assets/images/cat.jpg" alt="Photographer taking pictures" class="image" />
+                    <img src="assets/images/car.jpg" alt="Pineapple in black and white" class="hero-image" />
+                    <img src="assets/images/cat.jpg" alt="Photographer taking pictures" class="hero-image" />
                 </div>
             </div>
         </section>
@@ -134,20 +134,25 @@
         <!-- Portfolio Section -->
         <section class="portfolio" id="portfolio" aria-labelledby="portfolio-title">
             <h2 class="h2-title section-header">My <span>Work</span></h2>
-            <div class="filter-btns">
-                <button onclick="filterSelection('all')">All</button>
-                <button onclick="filterSelection('nature')">Nature</button>
-                <button onclick="filterSelection('car')">Cars</button>
-                <button onclick="filterSelection('animal')">Animals</button>
-            </div>
-
+            
             <div class="gallery">
-                <div class="gallery-item nature"><img src="assets/images/pineapple.jpg" alt="Web Project 1"></div>
-                <div class="gallery-item car"><img src="assets/images/car.jpg" alt="Graphic Project 1"></div>
-                <div class="gallery-item animal"><img src="assets/images/cat.jpg" alt="Branding Project 1"></div>
-                <div class="gallery-item nature"><img src="assets/images/purple_flower.jpg" alt="Web Project 2"></div>
-                <div class="gallery-item car"><img src="assets/images/car.jpg" alt="Graphic Project 2"></div>
-                <div class="gallery-item animal"><img src="assets/images/cat.jpg" alt="Branding Project 2"></div>
+                <div class="card-item">
+                    <img src="assets/images/vintage-camera.jpg" alt="Card Image">
+                    <span class="category camera">Photo Category</span>
+                    <h2 class="card-title">Card Title</h2>
+                </div>
+
+                <div class="card-item">
+                    <img src="assets/images/car.jpg" alt="Card Image">
+                    <span class="category car">Photo Category</span>
+                    <h2 class="card-title">Card Title</h2>
+                </div>
+
+                <div class="card-item">
+                    <img src="assets/images/pineapple.jpg" alt="Card Image">
+                    <span class="category food">Photo Category</span>
+                    <h2 class="card-title">Card Title</h2>
+                </div>
             </div>
         </section>
 
