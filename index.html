@@ -133,31 +133,107 @@
 
         <!-- Portfolio Section -->
         <section class="portfolio" id="portfolio" aria-labelledby="portfolio-title">
-            <h2 class="h2-title section-header">My <span>Work</span></h2>
-            
+            <div class="overlay">
+                <div class="overlay-inner">
+                    <div class="overlay-count-row">
+                        <div class="count-column">
+                            <h2 data-slide-count="step" class="count-heading">01</h2>
+                        </div>
+                        <div class="count-row-divider"></div>
+                        <div class="count-column">
+                            <h2 data-slide-count="step" class="count-heading">04</h2>
+                        </div>
+                    </div>
+
+                    <div class="overlay-nav-row">
+                        <!-- Previous Button -->
+                        <button aria-label="previous slide" data-slider="button-prev" class="button">
+                            <i class="ri-arrow-left-line button-arrow"></i>
+                            <div class="button-overlay">
+                                <div class="overlay-corner"></div>
+                                <div class="overlay-corner top-right"></div>
+                                <div class="overlay-corner bottom-left"></div>
+                                <div class="overlay-corner bottom-right"></div>
+                            </div>
+                        </button>
+
+                        <!-- Next Button -->
+                        <button aria-label="previous slide" data-slider="button-next" class="button">
+                            <i class="ri-arrow-right-line button-arrow"></i>
+                            <div class="button-overlay">
+                                <div class="overlay-corner"></div>
+                                <div class="overlay-corner top-right"></div>
+                                <div class="overlay-corner bottom-left"></div>
+                                <div class="overlay-corner bottom-right"></div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <div class="gallery">
-                <div class="card-item">
-                    <img src="assets/images/vintage-camera.jpg" alt="Card Image">
-                    <span class="category camera">Photo Category</span>
-                    <h2 class="card-title">Card Title</h2>
-                </div>
+                <div class="gallery-slider-wrap">
+                    <div data-slider="list" class="gallery-list">
+                        <!-- Gallery Item 1 -->
+                        <div data-slider="slide" class="slider-slide">
+                            <div class="slide-inner"><img
+                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
+                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
+                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
+                                <div class="slide-caption">
+                                    <div class="caption-dot"></div>
+                                    <p class="caption">Layout nº001</p>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="card-item">
-                    <img src="assets/images/car.jpg" alt="Card Image">
-                    <span class="category car">Photo Category</span>
-                    <h2 class="card-title">Card Title</h2>
-                </div>
+                        <!-- Gallery Item 2 -->
+                        <div data-slider="slide" class="slider-slide">
+                            <div class="slide-inner"><img
+                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
+                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
+                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
+                                <div class="slide-caption">
+                                    <div class="caption-dot"></div>
+                                    <p class="caption">Layout nº002</p>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="card-item">
-                    <img src="assets/images/pineapple.jpg" alt="Card Image">
-                    <span class="category food">Photo Category</span>
-                    <h2 class="card-title">Card Title</h2>
+                        <!-- Gallery Item 3 -->
+                        <div data-slider="slide" class="slider-slide">
+                            <div class="slide-inner"><img
+                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
+                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
+                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
+                                <div class="slide-caption">
+                                    <div class="caption-dot"></div>
+                                    <p class="caption">Layout nº003</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery Item 4 -->
+                        <div data-slider="slide" class="slider-slide">
+                            <div class="slide-inner"><img
+                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
+                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
+                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
+                                <div class="slide-caption">
+                                    <div class="caption-dot"></div>
+                                    <p class="caption">Layout nº004/p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="contact container" id="contact" aria-labelledby="contact-title"></section>
+        <section class="contact container" id="contact" aria-labelledby="contact-title">
+
+        </section>
 
     </main>
     <script src="assets/JS/main.js"></script>
