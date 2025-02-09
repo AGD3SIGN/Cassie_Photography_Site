@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="assets/CSS/styles.css" />
     <!-- Remixicons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Scroll Reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 
 <body>
@@ -97,23 +100,22 @@
 
             <!-- Hero Images -->
             <div class="hero-images">
-                <img src="assets/images/vintage-camera.jpg"
+                <img src="assets/images/things/vintage-camera.jpg"
                     alt="Vintage Camera with trees covered in snow on the display" class="hero-image" />
                 <div class="hero-image-small">
-                    <img src="assets/images/car.jpg" alt="Pineapple in black and white" class="hero-image" />
-                    <img src="assets/images/cat.jpg" alt="Photographer taking pictures" class="hero-image" />
+                    <img src="assets/images/things/car.jpg" alt="Pineapple in black and white" class="hero-image" />
+                    <img src="assets/images/animals/cat.jpg" alt="Photographer taking pictures" class="hero-image" />
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section class="about" id="about" aria-labelledby="about-title">
-            <!-- About Image -->
+        <!-- <section class="about" id="about" aria-labelledby="about-title">
+            
             <div class="about-image">
                 <img src="assets/images/purple_flower.jpg" alt="">
-                <img src="assets/images/pineapple.jpg" alt="">
             </div>
-            <!-- About Content -->
+           
             <div class="about-content">
                 <h2 class="h2-title section-header">About <span>Me</span></h2>
                 <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti vel
@@ -121,7 +123,7 @@
                 <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum sit, illo dolor
                     error alias consectetur!</p>
 
-                <!-- About Button -->
+               
                 <button class="cta-button">
                     <span class="circle" aria-hidden="true">
                         <span class="icon arrow"></span>
@@ -129,100 +131,57 @@
                     <span class="button-text">Book Now!</span>
                 </button>
             </div>
-        </section>
+        </section> -->
 
         <!-- Portfolio Section -->
-        <section class="portfolio" id="portfolio" aria-labelledby="portfolio-title">
-            <div class="overlay">
-                <div class="overlay-inner">
-                    <div class="overlay-count-row">
-                        <div class="count-column">
-                            <h2 data-slide-count="step" class="count-heading">01</h2>
-                        </div>
-                        <div class="count-row-divider"></div>
-                        <div class="count-column">
-                            <h2 data-slide-count="step" class="count-heading">04</h2>
-                        </div>
-                    </div>
-
-                    <div class="overlay-nav-row">
-                        <!-- Previous Button -->
-                        <button aria-label="previous slide" data-slider="button-prev" class="button">
-                            <i class="ri-arrow-left-line button-arrow"></i>
-                            <div class="button-overlay">
-                                <div class="overlay-corner"></div>
-                                <div class="overlay-corner top-right"></div>
-                                <div class="overlay-corner bottom-left"></div>
-                                <div class="overlay-corner bottom-right"></div>
-                            </div>
+        <section id="portfolio">
+            <div class="portfolio-container">
+                <div class="portfolio-row filter-wrap">
+                    <h2 class="h2-title section-header">My <span>Work</span></h2>
+                    <div class="portfolio-nav">
+                        <button type="button" data-id="all" class="btn active">
+                            All
                         </button>
-
-                        <!-- Next Button -->
-                        <button aria-label="previous slide" data-slider="button-next" class="button">
-                            <i class="ri-arrow-right-line button-arrow"></i>
-                            <div class="button-overlay">
-                                <div class="overlay-corner"></div>
-                                <div class="overlay-corner top-right"></div>
-                                <div class="overlay-corner bottom-left"></div>
-                                <div class="overlay-corner bottom-right"></div>
-                            </div>
+                        <button type="button" data-id="people">
+                            People
+                        </button>
+                        <button type="button" data-id="places">
+                            Places
+                        </button>
+                        <button type="button" data-id="things">
+                            Things
+                        </button>
+                        <button type="button" data-id="nature">
+                            Nature
                         </button>
                     </div>
-                </div>
-            </div>
 
-            <div class="gallery">
-                <div class="gallery-slider-wrap">
-                    <div data-slider="list" class="gallery-list">
-                        <!-- Gallery Item 1 -->
-                        <div data-slider="slide" class="slider-slide">
-                            <div class="slide-inner"><img
-                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
-                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
-                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
-                                <div class="slide-caption">
-                                    <div class="caption-dot"></div>
-                                    <p class="caption">Layout nº001</p>
-                                </div>
+                    <div class="portfolio-wrapper">
+                        <!-- Col 1 -->
+                        <div class="portfolio-col">
+                            <div class="portfolio-item people">
+                                <img src="assets/images/people/old_man.jpg" alt="">
+                            </div>
+                            <div class="portfolio-item places">
+                                <img src="assets/images/places/field.jpg" alt="">
                             </div>
                         </div>
-
-                        <!-- Gallery Item 2 -->
-                        <div data-slider="slide" class="slider-slide">
-                            <div class="slide-inner"><img
-                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
-                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
-                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
-                                <div class="slide-caption">
-                                    <div class="caption-dot"></div>
-                                    <p class="caption">Layout nº002</p>
-                                </div>
+                        <!-- Col 2 -->
+                        <div class="portfolio-col">
+                            <div class="portfolio-item things">
+                                <img src="assets/images/things/book.jpg" alt="">
+                            </div>
+                            <div class="portfolio-item nature">
+                                <img src="assets/images/nature/blue_flower.jpg" alt="">
                             </div>
                         </div>
-
-                        <!-- Gallery Item 3 -->
-                        <div data-slider="slide" class="slider-slide">
-                            <div class="slide-inner"><img
-                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
-                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
-                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
-                                <div class="slide-caption">
-                                    <div class="caption-dot"></div>
-                                    <p class="caption">Layout nº003</p>
-                                </div>
+                        <!-- Col 3 -->
+                        <div class="portfolio-col">
+                            <div class="portfolio-item people">
+                                <img src="assets/images/people/old_man2.jpg" alt="">
                             </div>
-                        </div>
-
-                        <!-- Gallery Item 4 -->
-                        <div data-slider="slide" class="slider-slide">
-                            <div class="slide-inner"><img
-                                    src="https://cdn.prod.website-files.com/674d847bf8e817966d307714/674d90f74ff2fe8b0b912b97_slide-1.avif"
-                                    loading="lazy" sizes="(max-width: 479px) 100vw, 560px"
-                                    alt="Abstract layout By FAKURIANDESIGN through Unsplash">
-                                <div class="slide-caption">
-                                    <div class="caption-dot"></div>
-                                    <p class="caption">Layout nº004/p>
-                                </div>
+                            <div class="portfolio-item places">
+                                <img src="assets/images/places/lake.jpg" alt="">
                             </div>
                         </div>
                     </div>

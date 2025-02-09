@@ -105,6 +105,7 @@ Root Variables
 
     /* Colors */
     --primary-purple: #3f41a6;
+    --light-purple: #8789fb;
     --secondary-purple: #1a093c;
     --white: #faf9f6;
     --dark-grey: #2e323b;
@@ -251,8 +252,51 @@ main {
 /* ======================================== 
   Portfolio Section
   ======================================== */
+  #portfolio {
+    /* background-color: greenyellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-lg);
+  }
 
+  .filter-wrap {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
+.portfolio-container {
+    max-width: 1575px;
+    margin: 0 auto;
+    /* padding: var(--spacing-lg); */
+}
+
+.portfolio-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portfolio-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    background-color: var(--primary-purple);
+    color: var(--white);
+    position: relative;
+    padding: 0 10px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    line-height: 40px;
+    cursor: pointer;
+    border: 0;
+    transition: .4s;
+}
 
 /* ======================================== 
  Responsive CSS 
@@ -260,6 +304,10 @@ main {
 
 /* Small Screens */
 @media screen and (max-width: 768px) {
+    main {
+        margin-inline: auto;
+    }
+
     .hero {
         grid-template-columns: 1fr;
     }
@@ -275,10 +323,6 @@ main {
 
     .description {
         text-align: center;
-    }
-
-    .gallery {
-        margin: 0 auto;
     }
 }
 
