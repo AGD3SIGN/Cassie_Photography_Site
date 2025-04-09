@@ -1,30 +1,33 @@
-/*=============== SHOW MENU ===============*/
-const navMenu = document.getElementById('nav-menu'),
-      navToggle = document.getElementById('nav-toggle'),
-      navClose = document.getElementById('nav-close')
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-/* Menu show */
-if(navToggle){
-   navToggle.addEventListener('click', () =>{
-      navMenu.classList.add('show-menu')
-   })
-}
+hamburger.addEventListener('click', () => {
+   hamburger.classList.toggle('active');
+   navMenu.classList.toggle('active');
+   document.body.style.overflow = hamburger.classList.contains('active') ? 'hidden' : 'auto';
+});
 
-/* Menu hidden */
-if(navClose){
-   navClose.addEventListener('click', () =>{
-      navMenu.classList.remove('show-menu')
-   })
-}
-
-/* ========== Toggle portfolio images ========== */
-function filterProjects(category) {
-   let items = document.querySelectorAll('.gallery-item');
-   items.forEach(item => {
-       if (category === 'all') {
-           item.classList.remove('hidden');
-       } else {
-           item.classList.toggle('hidden', !item.classList.contains(category));
-       }
+// Close menu when clicking a nav link
+document.querySelectorAll('.nav-links li a').forEach(link => {
+   link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = 'auto';
    });
+});
+
+// Header background change on scroll
+window.addEventListener('scroll', () => {
+   const header = document.querySelector('header');
+   if (window.scrollY > 100) {
+      header.classList.add('scroll-active');
+   } else {
+      header.classList.remove('scroll-active');
+   }
+});
+
+// Initial check for scroll position (on page refresh)
+if (window.scrollY > 100) {
+   document.querySelector('header').classList.add('scroll-active');
 }
