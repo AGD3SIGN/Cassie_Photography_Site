@@ -1,6 +1,8 @@
 /* ===== Fonts ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Just+Me+Again+Down+Here&family=Raleway:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap");
+
 /* ===== CSS RESET ===== */
 *,
 *::before,
@@ -13,171 +15,271 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    background-color: var(--white);
+
 }
 
-/* ===== Reusable CSS ===== */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ======================================== 
+Root Variables 
+======================================== */
+:root {
+    /* Colors */
+    --primary-color: #6739c8;
+    --primary-light: #8789fb;
+    --secondary-color: #1a093c;
+    --bg-color: #faf9f6;
+    --text-color: #2e323b;
+    --shadow: #61646b;
+
+    /* Typography */
+    --heading-ff: "Shadows Into Light", sans-serif;
+    --body-ff: "Raleway", sans-serif;
+}
+
+/* ======================================== 
+Reusable CSS Classes 
+======================================== */
+/* Main */
+main {
+    max-width: 1575px;
+    margin: auto;
+    margin-top: 4.5rem;
+}
+
+/* Container */
 .container {
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1575px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
-/* ===== Header / Navigation Styles ===== */
+/* Span */
+span {
+    color: var(--primary-color);
+    font-family: var(--heading-ff);
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    padding: 8px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(125, 76, 219, 0.3);
+}
+
+/* Section */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Titles */
+.h1-title {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.h2-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-header {
+    position: relative;
+    isolation: isolate;
+    width: fit-content;
+    /* margin-inline: auto; Centers Text*/
+    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: var(--header-font);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+.section-header::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 3rem;
+    background-color: var(--primary-purple);
+}
+
+/* ======================================== 
+Header
+======================================== */
 header {
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
-    padding: 1.5rem 2rem;
-    z-index: 100;
-    transition: all 0.3s ease;
-}
-
-header.scroll-active {
-    background-color: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 1rem 2rem;
-}
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    z-index: 100;
+    padding: 15px 0;
 }
 
 .logo {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #3a3a3a;
-    text-decoration: none;
-    z-index: 101;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
 }
 
-.nav-links li a {
-    text-decoration: none;
-    color: #3a3a3a;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
     position: relative;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-.nav-links li a::after {
+.nav-links a:after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -4px;
+    bottom: -5px;
     left: 0;
-    background-color: #5c6ac4;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
-.nav-links li a:hover {
-    color: #5c6ac4;
+.nav-links a:hover {
+    color: var(--primary-color);
 }
 
-.nav-links li a:hover::after {
+.nav-links a:hover:after {
     width: 100%;
 }
 
-.cta-button {
-    background-color: #5c6ac4;
-    color: white;
-    padding: 0.7rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 2px solid #5c6ac4;
-}
-
-.cta-button:hover {
-    background-color: transparent;
-    color: #5c6ac4;
-}
-
-.hamburger {
+.menu-toggle {
     display: none;
     cursor: pointer;
-    z-index: 101;
+    font-size: 1.5rem;
 }
 
-.bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #3a3a3a;
-    transition: all 0.3s ease;
-}
-
-/* Main content for demonstration */
-main {
-    margin-top: 8rem;
+/* ======================================== 
+Hero Section
+======================================== */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
     padding: 2rem;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
 
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
+.hero-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+    gap: 1rem;
+}
 
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
+.hero-image-small {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
 
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        transform: translateY(-100%);
-        transition: transform 0.5s ease;
-        opacity: 0;
-        visibility: hidden;
-    }
-
-    .nav-menu.active {
-        transform: translateY(0);
-        opacity: 1;
-        visibility: visible;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .nav-links li a {
-        font-size: 1.5rem;
-    }
-
-    .cta-button {
-        margin-top: 1rem;
-        padding: 1rem 2rem;
-        font-size: 1.2rem;
-    }
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: .75rem;
 }

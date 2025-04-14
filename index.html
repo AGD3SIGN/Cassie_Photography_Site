@@ -19,37 +19,54 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo"><img src="assets/images/logo1.svg" alt=""></a>
+            <nav>
+                <div class="logo">Photo<span>Folio</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
 
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-
-                <div class="nav-menu">
-                    <ul class="nav-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                    <a href="#" class="cta-button">Lets Talk!</a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="ri-menu-3-line"></i>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section class="hero">
-            <h1>Lorem ipsum dolor sit amet.</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla porro perferendis, vero, nemo modi, sed a veniam debitis sunt necessitatibus nisi in quam voluptates inventore.</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1 class="h1-title">
+                    Where the <span>creative</span> process happens
+                </h1>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
+                    provident.
+                </p>
+
+                <!-- Hero Button -->
+                <a href="#portfolio" class="btn">Explore</a>
+            </div>
+
+            <!-- Hero Images -->
+            <div class="hero-images">
+                <img src="assets/images/things/vintage-camera.jpg"
+                    alt="Vintage Camera with trees covered in snow on the display" class="hero-image" />
+                <div class="hero-image-small">
+                    <img src="assets/images/things/car.jpg" alt="Pineapple in black and white" class="hero-image" />
+                    <img src="assets/images/animals/cat.jpg" alt="Photographer taking pictures" class="hero-image" />
+                </div>
+            </div>
         </section>
     </main>
 
-    <script src="assets/JS/main.js"></script>
 </body>
+
+
+<script src="assets/JS/main.js"></script>
 
 </html>
