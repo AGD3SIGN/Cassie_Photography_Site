@@ -32,6 +32,27 @@ document.addEventListener("DOMContentLoaded", () => {
       })
    })
 
+   // Initialize Intersection Observer for scroll animations
+   const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1,
+   }
+
+   const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+            observer.unobserve(entry.target) // Stop observing once it's visible
+         }
+      })
+   }, observerOptions)
+
+   // Observe all elements with animate-on-scroll class
+   animatedElements.forEach((element) => {
+      observer.observe(element)
+   })
+
    // Scroll events
    window.addEventListener("scroll", () => {
       const scrollPosition = window.scrollY
@@ -55,9 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
          backToTop.classList.remove("visible")
       }
 
-      // Animate elements on scroll
-      animateOnScroll()
-
       // Animate stats when in viewport
       if (!statsAnimated) {
          const statsSection = document.querySelector(".stats")
@@ -78,29 +96,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
    // Testimonial carousel
    function showTestimonial(index) {
+      // Hide all testimonials first
       testimonialItems.forEach((item) => {
          item.classList.remove("active")
+         item.style.transform = "translateX(100%)"
+         item.style.opacity = "0"
       })
+
+      // Remove active class from all dots
       dots.forEach((dot) => {
          dot.classList.remove("active")
       })
 
+      // Show the selected testimonial
       testimonialItems[index].classList.add("active")
+      testimonialItems[index].style.transform = "translateX(0)"
+      testimonialItems[index].style.opacity = "1"
+
+      // Activate the corresponding dot
       dots[index].classList.add("active")
+
+      // Update current index
       currentTestimonial = index
    }
 
-   prevBtn.addEventListener("click", () => {
-      let index = currentTestimonial - 1
-      if (index < 0) index = testimonialItems.length - 1
-      showTestimonial(index)
-   })
+   // Initialize testimonial carousel
+   if (testimonialItems.length > 0) {
+      // Set initial state for all testimonials
+      testimonialItems.forEach((item, i) => {
+         if (i === 0) {
+            item.classList.add("active")
+            item.style.transform = "translateX(0)"
+            item.style.opacity = "1"
+         } else {
+            item.style.transform = "translateX(100%)"
+            item.style.opacity = "0"
+         }
+      })
 
-   nextBtn.addEventListener("click", () => {
-      let index = currentTestimonial + 1
-      if (index >= testimonialItems.length) index = 0
-      showTestimonial(index)
-   })
+      // Set first dot as active
+      if (dots.length > 0) {
+         dots[0].classList.add("active")
+      }
+   }
+
+   // Add event listeners for testimonial navigation
+   if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+         let index = currentTestimonial - 1
+         if (index < 0) index = testimonialItems.length - 1
+         showTestimonial(index)
+      })
+   }
+
+   if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+         let index = currentTestimonial + 1
+         if (index >= testimonialItems.length) index = 0
+         showTestimonial(index)
+      })
+   }
 
    dots.forEach((dot) => {
       dot.addEventListener("click", function () {
@@ -110,11 +165,27 @@ document.addEventListener("DOMContentLoaded", () => {
    })
 
    // Auto rotate testimonials
-   setInterval(() => {
+   let testimonialInterval = setInterval(() => {
       let index = currentTestimonial + 1
       if (index >= testimonialItems.length) index = 0
       showTestimonial(index)
    }, 5000)
+
+   // Pause auto-rotation when hovering over testimonials
+   const testimonialCarousel = document.querySelector(".testimonial-carousel")
+   if (testimonialCarousel) {
+      testimonialCarousel.addEventListener("mouseenter", () => {
+         clearInterval(testimonialInterval)
+      })
+
+      testimonialCarousel.addEventListener("mouseleave", () => {
+         testimonialInterval = setInterval(() => {
+            let index = currentTestimonial + 1
+            if (index >= testimonialItems.length) index = 0
+            showTestimonial(index)
+         }, 5000)
+      })
+   }
 
    // Contact form validation
    if (contactForm) {
@@ -188,16 +259,9 @@ document.addEventListener("DOMContentLoaded", () => {
    }
 
    function isInViewport(element) {
+      if (!element) return false
       const rect = element.getBoundingClientRect()
       return rect.top <= (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0
-   }
-
-   function animateOnScroll() {
-      animatedElements.forEach((element) => {
-         if (isInViewport(element)) {
-            element.classList.add("visible")
-         }
-      })
    }
 
    function animateStats() {
@@ -228,7 +292,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 3000)
    }
 
-   // Initialize
-   animateOnScroll()
-   showTestimonial(0)
+   // Trigger initial animations for elements already in viewport
+   animatedElements.forEach((element) => {
+      if (isInViewport(element)) {
+         element.classList.add("visible")
+      }
+   })
+
+   // Initialize testimonial carousel
+   if (testimonialItems.length > 0) {
+      showTestimonial(0)
+   }
 })
