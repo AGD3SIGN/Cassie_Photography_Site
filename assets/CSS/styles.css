@@ -674,7 +674,7 @@ Services Section
     padding: var(--spacing-md);
     box-shadow: var(--shadow-sm);
     text-align: center;
-    transition: all var(--transition-fast);
+    transition: 0.3s var(--transition-slow);
     position: relative;
     overflow: hidden;
 }
@@ -699,7 +699,7 @@ Services Section
     height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all var(--transition-medium);
+    transition: all var(--transition-slow);
     margin-top: var(--spacing-sm);
 }
 
