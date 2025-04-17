@@ -696,16 +696,11 @@ Services Section
 }
 
 .service-details {
-    height: 0;
+    height: auto;
     overflow: hidden;
-    opacity: 0;
+    opacity: 1;
     transition: all var(--transition-slow);
     margin-top: var(--spacing-sm);
-}
-
-.service-card:hover .service-details {
-    height: auto;
-    opacity: 1;
 }
 
 .service-details h4 {
