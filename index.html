@@ -4,198 +4,516 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Professional photography portfolio showcasing portrait, landscape, and event photography">
+    <meta property="og:title" content="Photography Portfolio">
+    <meta property="og:description"
+        content="Professional photography portfolio showcasing portrait, landscape, and event photography">
+    <meta property="og:type" content="website">
     <title>Photography | Portfolio</title>
     <!-- Styles CSS -->
-    <link rel="stylesheet" href="assets/CSS/main.css" />
+    <link rel="stylesheet" href="assets/CSS/styles.css" />
     <!-- Remixicons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-    <!-- Scroll Reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
 </head>
 
 <body>
-    <!-- Navigation Start -->
-    <nav class="nav container">
-        <a href="#" class="nav_logo">Logo</a>
 
-        <div class="nav_menu" id="nav-menu">
-            <ul class="nav_list">
-                <li class="nav_item">
-                    <a href="#home" class="nav_link">
-                        <i class="ri-home-line"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
+    <!-- Skip to content link / accessibilty -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
 
-                <li class="nav_item">
-                    <a href="#about" class="nav_link">
-                        <i class="ri-user-line"></i>
-                        <span>About</span>
-                    </a>
-                </li>
-
-                <li class="nav_item">
-                    <a href="#portfolio" class="nav_link">
-                        <i class="ri-polaroid-line"></i>
-                        <span>Portfolio</span>
-                    </a>
-                </li>
-
-                <li class="nav_item">
-                    <a href="#contact" class="nav_link">
-                        <i class="ri-mail-send-line"></i>
-                        <span>Contact</span>
-                    </a>
-                </li>
-            </ul>
-
-            <!-- Close button -->
-            <div class="nav_close" id="nav-close">
-                <i class="ri-close-large-line"></i>
-            </div>
-
-            <div class="nav_social">
-                <a href="https://www.instagram.com/" target="_blank" class="nav_social-link">
-                    <i class="ri-instagram-line"></i>
-                </a>
-
-                <a href="https://github.com/" target="_blank" class="nav_social-link">
-                    <i class="ri-github-line"></i>
-                </a>
-
-                <a href="https://www.linkedin.com/" target="_blank" class="nav_social-link">
-                    <i class="ri-linkedin-box-line"></i>
+    <!-- Header & Navigation -->
+    <!-- Header Start -->
+    <header class="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#" aria-label="Home">
+                    <h1>Port<span>Folio.</span></h1>
                 </a>
             </div>
+            <!-- Navigation Start -->
+            <nav class="nav">
+                <!-- Nav Toggle -->
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <!-- Nav Menu Start -->
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
+        <!-- Progress bar -->
+        <div class="progress-bar" id="progress-bar"></div>
+    </header>
+    <!-- Header End -->
 
-        <!-- Toggle button -->
-        <div class="nav_toggle" id="nav-toggle">
-            <i class="ri-menu-line"></i>
-        </div>
-    </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home" aria-labelledby="hero-title">
-            <!-- Hero Content -->
+    <!-- Hero Section Start -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="h1-title">
-                    Where the <span>creative</span> process happens
-                </h1>
-                <p class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam,
-                    provident.
-                </p>
-
-                <!-- Hero Button -->
-                <button class="cta-button">
-                    <span class="circle" aria-hidden="true">
-                        <span class="icon arrow"></span>
-                    </span>
-                    <span class="button-text">About Me!</span>
-                </button>
+                <h2 class="fade-in"><span>Capturing</span>Moments, <br>Creating <span>Memories</span></h2>
+                <p class="fade-in">Freelance Photographer that captures unique moments.</p>
+                <a href="#portfolio" class="btn fade-in">View Portfolio</a>
             </div>
+            <div class="hero-image-container fade-in">
+                <img src="assets/images/things/vintage-camera.jpg" alt="Professional photography vintage camera"
+                    class="hero-img">
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+    <!-- Hero Section End-->
 
-            <!-- Hero Images -->
-            <div class="hero-images">
-                <img src="assets/images/things/vintage-camera.jpg"
-                    alt="Vintage Camera with trees covered in snow on the display" class="hero-image" />
-                <div class="hero-image-small">
-                    <img src="assets/images/things/car.jpg" alt="Pineapple in black and white" class="hero-image" />
-                    <img src="assets/images/animals/cat.jpg" alt="Photographer taking pictures" class="hero-image" />
+    <!-- Main Content Start -->
+    <main id="main-content">
+        <!-- Portfolio Section Start -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Portfolio</h2>
+                <!-- Filter Container -->
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="people">People</button>
+                    <button class="filter-btn" data-filter="animals">Animals</button>
+                    <button class="filter-btn" data-filter="nature">Nature</button>
+                    <button class="filter-btn" data-filter="places">Places</button>
+                    <button class="filter-btn" data-filter="thing">Things</button>
+                </div>
+                <!-- Gallery Start -->
+                <div class="gallery">
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="people">
+                        <img src="assets/images/people/old_man.jpg" alt="Portrait photography of an old man"
+                            loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="animals">
+                        <img src="assets/images/animals/cat.jpg" alt="Portrait photography of a cat" loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="nature">
+                        <img src="assets/images/nature/purple_flower.jpg" alt="Portrait photography of a purple flower"
+                            loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="places">
+                        <img src="assets/images/places/field.jpg" alt="Portrait photography of a field" loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="thing">
+                        <img src="assets/images/things/book.jpg" alt="Portrait photography of a field" loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="people">
+                        <img src="assets/images/people/old_man2.jpg" alt="Portrait photography of an old man"
+                            loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="nature">
+                        <img src="assets/images/nature/blue_flower.jpg" alt="Portrait photography of a purple flower"
+                            loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="places">
+                        <img src="assets/images/places/lake.jpg" alt="Portrait photography of a field" loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="places">
+                        <img src="assets/images/places/lake2.jpg" alt="Portrait photography of a field" loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="thing">
+                        <img src="assets/images/things/brushes.jpg" alt="Portrait photography of a field"
+                            loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="thing">
+                        <img src="assets/images/things/car.jpg" alt="Portrait photography of a field" loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="thing">
+                        <img src="assets/images/things/ship.jpg" alt="Portrait photography of a field" loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
+                    <!-- Gallery Item -->
+                    <div class="gallery-item" data-category="thing">
+                        <img src="assets/images/things/technology.jpg" alt="Portrait photography of a field"
+                            loading="lazy">
+                        <!-- Gallery Item Info -->
+                        <div class="gallery-item-info">
+                            <h3>Lorem, ipsum dolor.</h3>
+                            <p>Portrait</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
+        <!-- Portfolio Section End -->
 
-        <!-- About Section -->
-        <!-- <section class="about" id="about" aria-labelledby="about-title">
-            
-            <div class="about-image">
-                <img src="assets/images/purple_flower.jpg" alt="">
-            </div>
-           
-            <div class="about-content">
-                <h2 class="h2-title section-header">About <span>Me</span></h2>
-                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum corrupti vel
-                    laudantium dolores aspernatur ea.</p>
-                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum sit, illo dolor
-                    error alias consectetur!</p>
+        <!-- About Section Start -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <!-- About Text -->
+                    <div class="about-text">
+                        <!-- Section Title -->
+                        <h2 class="section-title">About <span>Me</span></h2>
+                        <!-- Section Description -->
+                        <p class="animate-on-scroll">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quasi
+                            officia numquam ut rerum cumque ex voluptate! Dolorem fuga neque cum rem vitae, temporibus
+                            suscipit!</p>
+                        <p class="animate-on-scroll">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid,
+                            fugit!</p>
 
-               
-                <button class="cta-button">
-                    <span class="circle" aria-hidden="true">
-                        <span class="icon arrow"></span>
-                    </span>
-                    <span class="button-text">Book Now!</span>
-                </button>
-            </div>
-        </section> -->
-
-        <!-- Portfolio Section -->
-        <section id="portfolio">
-            <div class="portfolio-container">
-                <div class="portfolio-row filter-wrap">
-                    <h2 class="h2-title section-header">My <span>Work</span></h2>
-                    <div class="portfolio-nav">
-                        <button type="button" data-id="all" class="btn active">
-                            All
-                        </button>
-                        <button type="button" data-id="people">
-                            People
-                        </button>
-                        <button type="button" data-id="places">
-                            Places
-                        </button>
-                        <button type="button" data-id="things">
-                            Things
-                        </button>
-                        <button type="button" data-id="nature">
-                            Nature
-                        </button>
+                        <!-- Stat section -->
+                        <div class="stats">
+                            <!-- Stat Item 1 -->
+                            <div class="stat-item animate-on-scroll">
+                                <span class="stat-number" data-count="250">0</span>
+                                <span class="stat-label">Photo Sessions</span>
+                            </div>
+                            <!-- Stat Item 2 -->
+                            <div class="stat-item animate-on-scroll">
+                                <span class="stat-number" data-count="50">0</span>
+                                <span class="stat-label">Moments Captured</span>
+                            </div>
+                            <!-- Stat Item 3 -->
+                            <div class="stat-item animate-on-scroll">
+                                <span class="stat-number" data-count="120">0</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="portfolio-wrapper">
-                        <!-- Col 1 -->
-                        <div class="portfolio-col">
-                            <div class="portfolio-item people">
-                                <img src="assets/images/people/old_man.jpg" alt="">
-                            </div>
-                            <div class="portfolio-item places">
-                                <img src="assets/images/places/field.jpg" alt="">
-                            </div>
-                        </div>
-                        <!-- Col 2 -->
-                        <div class="portfolio-col">
-                            <div class="portfolio-item things">
-                                <img src="assets/images/things/book.jpg" alt="">
-                            </div>
-                            <div class="portfolio-item nature">
-                                <img src="assets/images/nature/blue_flower.jpg" alt="">
+                    <!-- About Image -->
+                    <div class="about-image animate-on-scroll">
+                        <img src="assets/images/people/old_man.jpg" alt="" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- Testimonials -->
+                <div class="testimonials">
+                    <h3>What Clients Say</h3>
+                    <div class="testimonial-carousel">
+                        <div class="testimonial-item active">
+                            <p>"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore laboriosam illum minus, laudantium dolores ullam"</p>
+                            <div class="testimonial-author">
+                                <span>Sarah & James</span>
+                                <span>Wedding Clients</span>
                             </div>
                         </div>
-                        <!-- Col 3 -->
-                        <div class="portfolio-col">
-                            <div class="portfolio-item people">
-                                <img src="assets/images/people/old_man2.jpg" alt="">
+                        <div class="testimonial-item">
+                            <p>"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore laboriosam illum minus, laudantium dolores ullam"</p>
+                            <div class="testimonial-author">
+                                <span>The Johnson Family</span>
+                                <span>Portrait Session</span>
                             </div>
-                            <div class="portfolio-item places">
-                                <img src="assets/images/places/lake.jpg" alt="">
+                        </div>
+                        <div class="testimonial-item">
+                            <p>"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore laboriosam illum minus, laudantium dolores ullam"</p>
+                            <div class="testimonial-author">
+                                <span>Michael Chen</span>
+                                <span>Corporate Client</span>
                             </div>
+                        </div>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="prev-btn" aria-label="Previous testimonial"><i
+                                class="ri-arrow-left-s-line"></i></button>
+                        <div class="carousel-dots">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                        </div>
+                        <button class="next-btn" aria-label="Next testimonial"><i
+                                class="ri-arrow-right-s-line"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section End -->
+
+        <!-- Services Section Start -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Services</h2>
+                <div class="service-cards">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Portrait Sessions</h3>
+                        <p>Professional portrait photography for individuals, couples, and families.</p>
+                        <div class="service-details">
+                            <h4>Pricing</h4>
+                            <p>Starting at $299</p>
+                            <ul>
+                                <li>1-2 hour session</li>
+                                <li>Multiple locations</li>
+                                <li>20+ edited digital images</li>
+                                <li>Print release</li>
+                            </ul>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Wedding Photography</h3>
+                        <p>Comprehensive coverage of your special day from preparation to reception.</p>
+                        <div class="service-details">
+                            <h4>Pricing</h4>
+                            <p>Starting at $1,999</p>
+                            <ul>
+                                <li>8 hours of coverage</li>
+                                <li>Second photographer</li>
+                                <li>Online gallery</li>
+                                <li>Wedding album</li>
+                            </ul>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3>Commercial</h3>
+                        <p>Professional photography for businesses, products, and corporate events.</p>
+                        <div class="service-details">
+                            <h4>Pricing</h4>
+                            <p>Starting at $599</p>
+                            <ul>
+                                <li>Product photography</li>
+                                <li>Corporate headshots</li>
+                                <li>Event coverage</li>
+                                <li>Commercial licensing</li>
+                            </ul>
+                            <a href="#contact" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon">
+                            <i class="fas fa-mountain"></i>
+                        </div>
+                        <h3>Fine Art Prints</h3>
+                        <p>Museum-quality prints of landscape and abstract photography for your home or office.</p>
+                        <div class="service-details">
+                            <h4>Pricing</h4>
+                            <p>Starting at $149</p>
+                            <ul>
+                                <li>Multiple sizes available</li>
+                                <li>Framing options</li>
+                                <li>Limited editions</li>
+                                <li>Shipping worldwide</li>
+                            </ul>
+                            <a href="#contact" class="btn">Order Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Services Section End -->
 
-        <!-- Contact Section -->
-        <section class="contact container" id="contact" aria-labelledby="contact-title">
-
+        <!-- Contact Form Start -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Photography Lane, Artville, CA 90210</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p>(555) 123-4567</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>contact@lenscraft.com</p>
+                        </div>
+                        <div class="map">
+                            <!-- Map placeholder - would be replaced with actual map integration -->
+                            <div class="map-placeholder">
+                                <img src="https://source.unsplash.com/random/600x300?map" alt="Location map"
+                                    loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Select Service</option>
+                                <option value="portrait">Portrait Session</option>
+                                <option value="wedding">Wedding Photography</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="prints">Fine Art Prints</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message"></span>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" required></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="error-message"></span>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Send Message</button>
+                        <div class="form-status"></div>
+                    </form>
+                </div>
+            </div>
         </section>
+        <!-- Contact Form End -->
 
+        <!-- Footer Section Start -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h2>PORT<span>FOLIO</span></h2>
+                        <p>Capturing life's precious moments</p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-social">
+                        <h3>Follow Me</h3>
+                        <div class="social-icons">
+                            <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="ri-snapchat-line"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="ri-youtube-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 PortFolio Photography. All rights reserved.</p>
+                </div>
+            </div>
+            <button class="back-to-top" aria-label="Back to top"><i class="ri-arrow-up-s-line"></i></button>
+        </footer>
+        <!-- Footer Section End -->
     </main>
+
+
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox"><i class="ri-close-line"></i></button>
+            <div class="lightbox-image-container">
+                <img src="/placeholder.svg" alt="" class="lightbox-image">
+            </div>
+            <div class="lightbox-caption">
+                <h3 class="lightbox-title"></h3>
+                <p class="lightbox-category"></p>
+            </div>
+            <button class="lightbox-prev" aria-label="Previous image"><i class="ri-arrow-left-line"></i></i></button>
+            <button class="lightbox-next" aria-label="Next image"><i class="ri-arrow-right-line"></i></i></button>
+        </div>
+    </div>
+
+    <!-- Main JS -->
     <script src="assets/JS/main.js"></script>
+    <!-- Gallery JS-->
+    <script src="assets/JS/gallery.js"></script>
 </body>
 
 </html>
