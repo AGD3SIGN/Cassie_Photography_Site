@@ -1,0 +1,7 @@
+# Search engines and AI answer engines are welcome to read the site.
+User-agent: *
+Allow: /
+Disallow: /assets/images/
+
+# TODO: replace with the real domain
+Sitemap: https://www.example.com/sitemap.xml

@@ -1,0 +1,20 @@
+# Lorem Studio
+
+> Lorem Studio is a photography studio based in [City, State] that creates portrait, landscape and documentary photography, told as a story. Available for travel.
+
+## Services
+- Portrait sessions: individuals, couples and families, on location or in natural-light studios.
+- Weddings and events: documentary coverage of the whole day.
+- Brand and commercial: headshots, products and workspaces for small businesses and creatives.
+- Fine art prints: limited-edition landscape prints on archival paper.
+
+## Booking
+- Portraits: book 2 to 4 weeks ahead. Weddings: 6 to 12 months ahead.
+- Delivery: portrait galleries within 2 weeks; wedding galleries within 6 weeks (sneak peek within 72 hours).
+- Contact: hello@example.com or the form at https://www.example.com/#contact
+
+## Pages
+- [Home / story](https://www.example.com/)
+- [Selected work](https://www.example.com/#work)
+- [About](https://www.example.com/#about)
+- [FAQ](https://www.example.com/#faq)

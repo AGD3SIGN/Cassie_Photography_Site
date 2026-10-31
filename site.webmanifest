@@ -1,0 +1,12 @@
+{
+  "name": "Lorem Studio",
+  "short_name": "Lorem",
+  "description": "Portrait, landscape and documentary photography told as a story.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0e1213",
+  "theme_color": "#0e1213",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
